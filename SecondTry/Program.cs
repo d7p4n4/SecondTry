@@ -7,7 +7,7 @@ namespace SecondTry
 {
     class Program
     {
-        static readonly string textFile = @"D:\Server\Person.java";
+        static readonly string textFile = Path.Combine(Environment.CurrentDirectory, "Person.java");
         static void Main(string[] args)
         {
             var map = new Dictionary<string, string>();
