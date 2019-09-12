@@ -9,7 +9,7 @@ namespace SecondTry
     {
         public static void writeOut(string text, string fileName)
         {
-            System.IO.File.WriteAllText(Path.Combine(Environment.CurrentDirectory, fileName + ".cs"), text);
+            System.IO.File.WriteAllText(Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, fileName + ".cs"), text);
         }
     }
 }

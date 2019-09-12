@@ -18,7 +18,7 @@ namespace SecondTry
             string[] text = ReadIn.readIn("Template");
             int x = text.Length;
 
-            WriteOut.writeOut(Generate.generateClass(text, "com.d7p4n4", "Person", map, x), "Person3");
+            WriteOut.writeOut(Generate.generateClass(text, "SecondTry", "Person", map, x), "Person");
             
             Type g = typeof(Generate);
 
@@ -31,6 +31,10 @@ namespace SecondTry
             }
 
             MyAttribute.AttributeDisplay(typeof(Generate));
+
+            Console.WriteLine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName);
+
+            Person p = new Person();
             
         }
     }
