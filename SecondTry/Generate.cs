@@ -6,6 +6,21 @@ namespace SecondTry
 {
     class Generate
     {
+        private int proba;
+        private string nemTom;
+
+        public string NemTom
+        {
+            get { return nemTom; }
+        }
+
+        public int Proba
+        {
+            get { return proba; }
+        }
+
+        [MyAttribute("property", "property2")]
+        public void getString() { }
         public static string generateClass(string[] text, string package, string className, Dictionary<string, string> map, int x)
         {
             string replaced = "";
