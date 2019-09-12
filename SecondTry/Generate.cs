@@ -21,7 +21,7 @@ namespace SecondTry
 
         [MyAttribute("property", "property2")]
         public void getString() { }
-        public static string generateClass(string[] text, string package, string className, Dictionary<string, string> map, int x)
+        public static string generateClass(string[] text, string package, string namespaceName, Dictionary<string, string> map, int x)
         {
             string replaced = "";
 
@@ -48,7 +48,7 @@ namespace SecondTry
                         replaced = replaced + "\n" + newLine;
 
                         newLine = text[i + 2].Replace("#prop#", pair.Key);
-                        replaced = replaced + "\n" + newLine + "\n    }\n";
+                        replaced = replaced + "\n" + newLine + "\n               }\n";
                     }
                     i = i + 3;
                 }
@@ -56,15 +56,12 @@ namespace SecondTry
                 {
                     foreach (var pair in map)
                     {
-                        string newLine = text[i + 1].Replace("#type#", pair.Value);
-                        newLine = newLine.Replace("#setProp#", "set" + pair.Key);
-                        newLine = newLine.Replace("#type#", pair.Value);
-                        newLine = newLine.Replace("#prop#", pair.Key);
+                        string newLine = text[i+1].Replace("#setProp#", "set" + pair.Key);
 
                         replaced = replaced + "\n" + newLine;
 
                         newLine = text[i + 2].Replace("#prop#", pair.Key);
-                        replaced = replaced + "\n" + newLine + "\n    }\n";
+                        replaced = replaced + "\n" + newLine + "\n               }\n";
                     }
                     i = i + 3;
                 }
@@ -74,7 +71,7 @@ namespace SecondTry
                 }
             }
             replaced = replaced.Replace("#packageName#", package);
-            replaced = replaced.Replace("#className#", className);
+            replaced = replaced.Replace("#namespaceName#", namespaceName);
 
             return replaced;
         }

@@ -9,10 +9,7 @@ namespace SecondTry
     {
         public static void writeOut(string text, string fileName)
         {
-            using (StreamWriter writer = new StreamWriter(Path.Combine(Environment.CurrentDirectory, fileName + ".java"), true))
-            {
-                writer.Write(text);
-            }
+            System.IO.File.WriteAllText(Path.Combine(Environment.CurrentDirectory, fileName + ".cs"), text);
         }
     }
 }

@@ -10,7 +10,6 @@ namespace SecondTry
     {
         static void Main(string[] args)
         {
-            /*
             var map = new Dictionary<string, string>();
             map.Add("name", "String");
             map.Add("guid", "String");
@@ -20,7 +19,7 @@ namespace SecondTry
             int x = text.Length;
 
             WriteOut.writeOut(Generate.generateClass(text, "com.d7p4n4", "Person", map, x), "Person3");
-            */
+            
             Type g = typeof(Generate);
 
             PropertyInfo[] props = g.GetProperties(BindingFlags.Instance | BindingFlags.Public);

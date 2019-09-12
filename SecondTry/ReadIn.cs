@@ -10,7 +10,7 @@ namespace SecondTry
         public static string[] readIn(string fileName)
         {
 
-            string textFile = Path.Combine(Environment.CurrentDirectory, fileName + ".java");
+            string textFile = Path.Combine(Environment.CurrentDirectory, fileName + ".cs");
 
             string[] text = File.ReadAllLines(textFile);
 
